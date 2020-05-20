@@ -2,22 +2,19 @@ import React from 'react';
 import './App.css';
 import './Buttons.css';
 import Popup from './components/popup.js';
-
 function App() {
   return (<div className="App">
-    <body id="bd">
 
-      <div class="screenone">
+    <div className="screenone">
 
-        <p class="body-text">If modal is open you cannot scroll me.</p>
+      <p className="body-text">If modal is open you cannot scroll me.</p>
 
-      </div>
+    </div>
 
-      <div class="screentwo">
-        <p class="body-text">Close the modal and you can see me</p>
-      </div>
-      <Popup></Popup>
-    </body>
+    <div className="screentwo">
+      <p className="body-text">Close the modal and you can see me</p>
+    </div>
+    <Popup></Popup>
   </div>);
 }
 

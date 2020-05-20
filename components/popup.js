@@ -1,6 +1,5 @@
 import React from 'react';
-import DisplayVendors from './displayVendors.js'
-
+import FetchInformation from './fetchInformation.js'
 
 function Popup() {
   return (
@@ -8,7 +7,7 @@ function Popup() {
     <div className='modal' id='popup'>
       <div className='modal-content'>
         <h2 className='headline'>GDPR consent</h2>
-        <DisplayVendors></DisplayVendors>
+        <FetchInformation></FetchInformation>
         <div className="buttons">
           <button id='accept'>Accept</button>
           <button id='reject'>Reject</button>
