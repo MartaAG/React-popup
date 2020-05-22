@@ -21,7 +21,7 @@ class FetchInformation extends React.Component {
     })
 
     let text = data.purposes.map((purpose => {
-      return({name:purpose.name, description:purpose.description})
+      return({name:purpose.name, description:purpose.description, id:purpose.id, index:purpose.index})
     }))
     this.setState({list: vendors, description:text})
   }

@@ -1,20 +1,36 @@
 import React from 'react';
 import FetchInformation from './fetchInformation.js'
+import Buttons from './Buttons'
 
-function Popup() {
-  return (
-  <div>
-    <div className='modal' id='popup'>
+class Popup extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      hidePopup: false
+    }
+
+    this.closeModal = this.closeModal.bind(this);
+    this.popupInstance = (<div className='modal' id='popup'>
       <div className='modal-content'>
         <h2 className='headline'>GDPR consent</h2>
         <FetchInformation></FetchInformation>
-        <div className="buttons">
-          <button id='accept'>Accept</button>
-          <button id='reject'>Reject</button>
-        </div>
+        <Buttons action={this.closeModal}/>
       </div>
-    </div>
-  </div>)
+    </div>)
+
+  }
+
+  closeModal() {
+    this.setState({hidePopup: true});
+  }
+
+  render() {
+    const style = this.state.hidePopup ? {display: 'none'} : {};
+    return (<div style={style}>
+      {this.popupInstance}
+    </div>)
+
+  }
 }
 
 export default Popup;
