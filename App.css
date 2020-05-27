@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+body {
+  overflow: hidden;
+}
+
 .modal {
   position: fixed;
   font-family: 'Roboto', sans-serif;
@@ -25,10 +29,6 @@
   width: 80%;
   padding: 20px;
   margin: 10px
-}
-
-.noscroll {
-  overflow: hidden;
 }
 
 .screenone {

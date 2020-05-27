@@ -26,7 +26,7 @@ class Popup extends React.Component {
   }
 
   enableScroll() {
-    document.body.classList.remove("no-sroll")
+    document.body.style.overflow = 'auto'
   }
 
   render() {
