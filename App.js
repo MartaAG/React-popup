@@ -14,6 +14,7 @@ function App() {
     <div className="screentwo">
       <p className="body-text">Close the modal and you can see me</p>
     </div>
+    {/*here is comment to check if branch is working properly*/}
     <Popup></Popup>
   </div>);
 }

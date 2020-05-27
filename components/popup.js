@@ -22,6 +22,11 @@ class Popup extends React.Component {
 
   closeModal() {
     this.setState({hidePopup: true});
+    this.enableScroll()
+  }
+
+  enableScroll() {
+    document.body.classList.remove("no-sroll")
   }
 
   render() {
