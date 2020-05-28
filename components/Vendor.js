@@ -1,22 +1,29 @@
 import React from 'react';
 
-function Vendor(props) {
 
-  return (
-    <li className='vendorList'
-        id={props.id}
-        key={props.id}>
-        {props.name}
+class Vendor extends React.Component {
+  constructor(props) {
+    super();
+    this.state = {}
+  }
 
-        <a href={props.policyUrl}
-          className='companyLink'>
-          {props.policyUrl}</a>
-        <label className='switch'>
-          <input type='checkbox'
-              className='switch-input'/>
-      <span className='switch-handle'></span>
-      </label>
-  </li>)
+  render() {
+    return (  <li className='vendorList'
+          id={this.props.id}
+          key={this.props.id}>
+          {this.props.name}
+
+          <a href={this.props.policyUrl}
+            className='companyLink'>
+            {this.props.policyUrl}</a>
+          <label className='switch'>
+            <input type='checkbox'
+                className='switch-input'/>
+        <span className='switch-handle'></span>
+        </label>
+    </li>)
+  }
+
 }
 
 export default Vendor;
