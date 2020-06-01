@@ -1,17 +1,35 @@
 import React from 'react';
 import Vendor from './Vendor.js'
 
-function VendorList(props) {
-  let VendorsArray = props.vendorList;
-  let listVendor = VendorsArray.map((v) => { return (
-    <Vendor id={v.id} name={v.name} policyUrl={v.policyUrl}/>)
+class VendorList extends React.Component {
+  constructor(props) {
+    super();
+    this.state = {
+      vendorStatus: {}
+    };
+
+    this.handleCheckChange = this.handleCheckChange.bind(this);
+
   }
-    );
-  return (<div id="listOfVendors">
+
+  handleCheckChange(id, isChecked) {
+      let changedStatus = {...this.state.vendorStatus}
+      changedStatus[id] = isChecked
+      this.setState({ vendorStatus: changedStatus });
+      console.log(changedStatus)
+  }
+
+  render() {
+    return (
+      <div id="listOfVendors">
     <ul id="parent-list">
-      {listVendor}
+      {this.props.vendorList.map((v) => { return (
+        <Vendor onCheckboxChange={this.handleCheckChange} id={v.id} name={v.name} policyUrl={v.policyUrl}/>)
+      }
+      )}
     </ul>
   </div>)
+  }
 }
 
 export default VendorList;
