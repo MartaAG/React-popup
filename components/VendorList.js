@@ -36,7 +36,9 @@ class VendorList extends React.Component {
         <Vendor onCheckboxChange={this.handleCheckChange}
           id={v.id}
           name={v.name}
-          policyUrl={v.policyUrl}/>)
+          policyUrl={v.policyUrl}
+          key={v.id.toString()}
+          />)
       }
       )}
     </ul>

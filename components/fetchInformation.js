@@ -2,6 +2,7 @@ import React from 'react';
 import VendorList from './VendorList.js'
 import Purposes from './Purposes.js'
 
+
 class FetchInformation extends React.Component {
   constructor() {
     super();
@@ -21,7 +22,7 @@ class FetchInformation extends React.Component {
     })
 
     let text = data.purposes.map((purpose => {
-      return({name:purpose.name, description:purpose.description, id:purpose.id, index:purpose.index})
+      return({name:purpose.name, description:purpose.description, id:purpose.id})
     }))
     this.setState({list: vendors, description:text})
   }

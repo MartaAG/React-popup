@@ -15,8 +15,7 @@ class Vendor extends React.Component {
     return (
 
       <li className='vendorList'
-          id={this.props.id}
-          key={this.props.id}>
+          id={this.props.id}>
           {this.props.name}
 
           <a href={this.props.policyUrl}

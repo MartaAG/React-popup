@@ -4,8 +4,8 @@ function Purposes(props) {
   let descriptionArray = props.purposesDescription;
   let description = descriptionArray.map((d) =>
         <div id="legal" >
-        <h3 key={d.id}>{d.name}</h3>
-        <p key={d.index} className="legal-text">{d.description}</p>
+        <h3 key={d.index}>{d.name}</h3>
+        <p key={d.id.toString()} className="legal-text">{d.description}</p>
         </div>
   );
 
