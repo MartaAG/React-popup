@@ -1,6 +1,8 @@
 import React from 'react';
 import Vendor from './Vendor.js'
 import Cookies from 'js-cookie'
+import Buttons from './Buttons'
+
 
 class VendorList extends React.Component {
   constructor(props) {
@@ -10,6 +12,7 @@ class VendorList extends React.Component {
     };
 
     this.handleCheckChange = this.handleCheckChange.bind(this);
+    this.handleButtonClick = this.handleButtonClick.bind(this);
 
   }
 
@@ -19,13 +22,20 @@ class VendorList extends React.Component {
       let changedStatus = {...this.state.vendorStatus}
       changedStatus[id] = isChecked
       this.setState({ vendorStatus: changedStatus });
-
-      this.setCookie(id, isChecked)
-      console.log(changedStatus)
   }
-
-  setCookie(id, value) {
-    Cookies.set(id, value, { expires: 1, path: '/' });
+//iterate over vendorStatus
+//save it to cookies
+  handleButtonClick(){
+    let acceptedVendors = [];
+    for(const id in this.state.vendorStatus) {
+      if (this.state.vendorStatus[id]) {
+        acceptedVendors.push(id)
+      }
+      this.setCookie(acceptedVendors)
+    }
+  }
+  setCookie(id) {
+    Cookies.set("acceptedVendors", id, { expires: 1, path: '/' });
   }
 
   render() {
@@ -42,7 +52,12 @@ class VendorList extends React.Component {
       }
       )}
     </ul>
-  </div>)
+
+    <Buttons action={this.handleButtonClick}/>
+
+  </div>
+
+)
   }
 }
 

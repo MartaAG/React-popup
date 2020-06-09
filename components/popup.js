@@ -1,6 +1,5 @@
 import React from 'react';
 import FetchInformation from './fetchInformation.js'
-import Buttons from './Buttons'
 
 class Popup extends React.Component {
   constructor() {
@@ -10,12 +9,11 @@ class Popup extends React.Component {
     }
 
     this.closeModal = this.closeModal.bind(this);
-    this.popupInstance = (<div className='modal' id='popup'>
-      <div className='modal-content'>
+    this.popupInstance = (<div>
+
         <h2 className='headline'>GDPR consent</h2>
         <FetchInformation></FetchInformation>
-        <Buttons action={this.closeModal}/>
-      </div>
+  
     </div>)
 
   }
