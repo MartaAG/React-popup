@@ -33,6 +33,8 @@ class VendorList extends React.Component {
       }
       this.setCookie(acceptedVendors)
     }
+    //close modal sent from popup
+    this.props.close()
   }
   setCookie(id) {
     Cookies.set("acceptedVendors", id, { expires: 1, path: '/' });
@@ -40,7 +42,8 @@ class VendorList extends React.Component {
 
   render() {
     return (
-      <div id="listOfVendors">
+    <div>
+    <div id="listOfVendors">
     <ul id="parent-list">
       {this.props.vendorList.map((v) => { return (
         <Vendor onCheckboxChange={this.handleCheckChange}
@@ -53,8 +56,9 @@ class VendorList extends React.Component {
       )}
     </ul>
 
-    <Buttons action={this.handleButtonClick}/>
 
+  </div>
+  <Buttons action={this.handleButtonClick} close={this.props.close}/>
   </div>
 
 )

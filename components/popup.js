@@ -9,11 +9,11 @@ class Popup extends React.Component {
     }
 
     this.closeModal = this.closeModal.bind(this);
-    this.popupInstance = (<div>
-
+    this.popupInstance = (<div className='modal' id='popup'>
+        <div className='modal-content'>
         <h2 className='headline'>GDPR consent</h2>
-        <FetchInformation></FetchInformation>
-  
+        <FetchInformation close={this.closeModal}></FetchInformation>
+        </div>
     </div>)
 
   }

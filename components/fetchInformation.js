@@ -30,7 +30,7 @@ class FetchInformation extends React.Component {
   render() {
     return (<div>
         <Purposes purposesDescription={this.state.description}></Purposes>
-        <VendorList vendorList={this.state.list}></VendorList>
+        <VendorList vendorList={this.state.list} close={this.props.close}></VendorList>
     </div>)
   }
 }
