@@ -11,7 +11,7 @@ function Purposes(props) {
 
 
   return (
-    <div>
+    <div class='description-container'>
     {description}
     </div>
   )
